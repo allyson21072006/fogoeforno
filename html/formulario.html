@@ -1,83 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <title>Curso HTML5 Essencial</title>
-        
-        <link href="css/estilo.css" rel="stylesheet" media="screen">
-        
-        <style>
-        html {
-	background-color:#F4F4F4;
-	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:12px;
-}
-
-body {
-	width:560px;
-	border:1px solid #ddd;
-	margin:10px auto;
-	background-color:#FFF;
-	padding:10px 30px;
-	border-radius:5px;
-}
-
-h2 {
-	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size:30px;
-	font-style:italic;
-	letter-spacing:-0.05em;
-	color:#C63;
-	margin:2px 0 15px;
-	text-shadow:1px 1px 2px #666;
-}
-
-input {
-	display:block;
-	margin-bottom:20px;
-	border:1px solid #999;
-	padding:8px;
-	border-radius:3px;
-}
-
-input:focus {
-	border:1px solid #ccc;
-	outline:none;
-}
-
-input[type=submit] {
-	width:100px;
-	color:#FFF;
-	background:linear-gradient(top, #F33, #933 );
-	border:1px solid #333;
-	cursor:pointer;
-}
-
-
-        </style>
-        
-        
-    </head>
-
-    <body>
-        
-        <h2>Formulário</h2>
-        <form action="destino.html" method="post">
-            
-            <input type="text" name="nome" id="nome" size="30" maxlength="100" required autofocus placeholder="Insira seu nome">
-            
-            <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" id="telefone" size="30" maxlength="30"> 
-            
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" size="30" maxlength="60" required>             
-            
-            <label for="website">Web Site</label>
-            <input type="url" name="website" id="website" size="30" maxlength="60">             
-
-            
-            <input type="submit" value="Enviar" id="enviar" name="enviar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fogo&Fornalha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image:url(one\ \(2\).png)
+        }
+        .container {
+            background-color: rgba(108, 134, 78, 0.788);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #40811a;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(223, 23, 23);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1414;
+        }
+        .switch {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .switch a {
+            color: #e9f0e8;
+            text-decoration: none;
+        }
+        .switch a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required>
+            <label for="login-password">Senha:</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="submit">Entrar</button>
         </form>
-    
-    </body>
+        <div class="switch">
+            <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <h2>Cadastro</h2>
+        <form id="register-form">
+            <label for="register-name">Nome:</label>
+            <input type="text" id="register-name" name="name" required>
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" required>
+            <label for="register-password">Senha:</label>
+            <input type="password" id="register-password" name="password" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="switch">
+            <p>Já tem uma conta? <a href="#" id="show-login">Faça login</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('show-register').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        });
+
+        document.getElementById('show-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+    </script>
+</body>
 </html>
