@@ -75,6 +75,8 @@ main section.pizzas {
     background-color: #FFF;
     box-shadow: 0 0 10px #666;
     border-radius: 5px;
+    margin-bottom: 20px;
+    
 }
 
 main section.pizzas img {
@@ -118,4 +120,18 @@ main section.direita {
 
 main section.centro {
     margin-left: 5%;
-}  
+} 
+
+#rodape {
+	clear: both;
+	text-align: center;
+	padding: 15px;
+	background: #CCC;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#espaco {
+	clear: both;
+	margin-bottom: 10px;
+}
